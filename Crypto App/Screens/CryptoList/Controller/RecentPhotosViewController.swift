@@ -38,14 +38,15 @@ final class RecentPhotosViewController: FAViewController  {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let nib = UINib(nibName: "RecentsTableViewCell", bundle: nil)
+        let nib = UINib(nibName: "PhotoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
+        tableView.rowHeight = 500
         
         viewModel.fetchPhotos()
         
         viewModel.changeHandler = { change in
             switch change {
-            case .didFetchCoins:
+            case .didFetchPhotos:
                 self.tableView.reloadData()
             case .didErrorOccurred(let error):
                 self.showError(error)
@@ -57,12 +58,12 @@ final class RecentPhotosViewController: FAViewController  {
 // MARK: - UITableViewDelegate
 extension RecentPhotosViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let coin = viewModel.photoForIndexPath(indexPath) else {
+        guard viewModel.photoForIndexPath(indexPath) != nil else {
             return
         }
-        let viewModel = CryptoDetailViewModel(coin: coin)
-        let viewController = CryptoDetailViewController(viewModel: viewModel)
-        navigationController?.pushViewController(viewController, animated: true)
+//        let viewModel = PhotoDetailViewModel(photo: photo)
+//        let viewController = CryptoDetailViewController(viewModel: viewModel)
+//        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
@@ -73,13 +74,13 @@ extension RecentPhotosViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CoinTableViewCell else {
-            fatalError("CoinTableViewCell not found.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PhotoTableViewCell else {
+            fatalError("PhotoTableViewCell not found.")
         }
-        guard let coin = viewModel.photoForIndexPath(indexPath) else {
-            fatalError("coin not found.")
+        guard let photo = viewModel.photoForIndexPath(indexPath) else {
+            fatalError("photo not found.")
         }
-        cell.imageView?.kf.setImage(with: coin.iconUrl) { _ in
+        cell.imageView?.kf.setImage(with: photo.url) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         

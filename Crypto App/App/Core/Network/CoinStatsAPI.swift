@@ -29,7 +29,7 @@ extension CoinStatsAPI: TargetType {
     var path: String {
         switch self {
         case .coins:
-            return "/coins"
+            return "/photos"
         case .chart:
             return "/charts"
         }

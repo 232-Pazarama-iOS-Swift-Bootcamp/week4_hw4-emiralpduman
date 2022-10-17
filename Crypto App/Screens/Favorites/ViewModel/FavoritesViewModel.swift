@@ -7,21 +7,21 @@
 
 import Foundation
 
-final class FavoritesViewModel: CAViewModel {
+final class FavoritesViewModel: FAViewModel {
     
-    private var coins = [Coin]()
+    private var photos = [Photo]()
     
     var numberOfRows: Int {
-        coins.count
+        photos.count
     }
     
-    func coinForIndexPath(_ indexPath: IndexPath) -> Coin? {
-        coins[indexPath.row]
+    func photoForIndexPath(_ indexPath: IndexPath) -> Photo? {
+        photos[indexPath.row]
     }
     
     func fetchFavorites(_ completion: @escaping (Error?) -> Void) {
         
-        coins = []
+        photos = []
         
         guard let uid = uid else {
             return
@@ -34,15 +34,15 @@ final class FavoritesViewModel: CAViewModel {
             let user = User(from: data)
             
             user.favorites?.forEach({ coinId in
-                self.db.collection("coins").document(coinId).getDocument { (querySnapshot, err) in
+                self.db.collection("photos").document(coinId).getDocument { (querySnapshot, err) in
                     if let err = err {
                         completion(err)
                     } else {
                         guard let data = querySnapshot?.data() else {
                             return
                         }
-                        let coin = Coin(from: data)
-                        self.coins.append(coin)
+                        let photo = Photo(from: data)
+                        self.photos.append(photo)
                         completion(nil)
                     }
                 }

@@ -11,13 +11,13 @@ import FirebaseFirestore
 
 enum RecentsListChanges {
     case didErrorOccurred(_ error: Error)
-    case didFetchCoins
+    case didFetchPhotos
 }
 
 final class RecentPhotosViewModel {
     private var photosResponse: PhotosResponse? {
         didSet {
-            self.changeHandler?(.didFetchCoins)
+            self.changeHandler?(.didFetchPhotos)
         }
     }
     

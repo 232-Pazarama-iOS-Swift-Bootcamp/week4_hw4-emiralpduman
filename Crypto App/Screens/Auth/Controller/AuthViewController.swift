@@ -91,7 +91,7 @@ final class AuthViewController: FAViewController {
                              completion: { [weak self] in
                 guard let self = self else { return }
                 let cryptoListViewModel = RecentPhotosViewModel()
-                let cryptoListViewController = RecentPhotosViewController(viewModel: cryptoListViewModel)
+                let PhotoListViewController = RecentPhotosViewController(viewModel: cryptoListViewModel)
                 
                 let favoritesViewModel = FavoritesViewModel()
                 let favoritesViewController = FavoritesViewController(viewModel: favoritesViewModel)
@@ -99,7 +99,7 @@ final class AuthViewController: FAViewController {
                 let profileViewController = ProfileViewController()
                 
                 let tabBarController = UITabBarController()
-                tabBarController.viewControllers = [cryptoListViewController,
+                tabBarController.viewControllers = [PhotoListViewController,
                                                     favoritesViewController,
                                                     profileViewController]
                 self.navigationController?.pushViewController(tabBarController, animated: true)

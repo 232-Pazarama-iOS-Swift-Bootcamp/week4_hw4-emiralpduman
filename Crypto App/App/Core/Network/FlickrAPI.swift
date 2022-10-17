@@ -36,8 +36,8 @@ extension FlickrAPI: TargetType {
         let parameters: [String : Any] = ["method" : "flickr.photos.getRecent",
                                           "format" : "json",
                                           "nojsoncallback" : 1,
-                                          "api_key" : "cb43d0de658a4d9e6cabac4c762c732e",
-                                          "extras" : ["owner_name", "url_c"]]
+                                          "api_key" : "c8876faae75a89bd6533b2ba76f2cf64",
+                                          "extras" : "owner_name, url_c"]
         return .requestParameters(parameters:  parameters, encoding: URLEncoding.queryString)
     }
     

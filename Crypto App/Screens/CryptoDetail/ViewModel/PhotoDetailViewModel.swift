@@ -1,5 +1,5 @@
 //
-//  CryptoDetailViewModel.swift
+//  PhotoDetailViewModel.swift
 //  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 9.10.2022.
@@ -9,20 +9,20 @@ import Foundation
 import FirebaseFirestore
 
 @objc
-protocol CryptoDetailDelegate: AnyObject {
+protocol PhotoDetailDelegate: AnyObject {
     @objc optional func didErrorOccurred(_ error: Error)
     @objc optional func didFetchChart()
-    @objc optional func didCoinAddedToFavorites()
+    @objc optional func didPhotoAddedToFavorites()
 }
 
-final class CryptoDetailViewModel {
-    weak var delegate: CryptoDetailDelegate?
+final class PhotoDetailViewModel {
+    weak var delegate: PhotoDetailDelegate?
     
     private let db = Firestore.firestore()
     
     private let defaults = UserDefaults.standard
     
-    private var coin: Photo
+    private var photo: Photo
     
     private(set) var chartResponse: ChartResponse? {
         didSet {
@@ -30,32 +30,32 @@ final class CryptoDetailViewModel {
         }
     }
     
-    var coinName: String? {
-        coin.name
-    }
+//    var coinName: String? {
+//        coin.name
+//    }
+//    
+//    var price: String? {
+//        coin.prettyPrice
+//    }
+//    
+//    var rate: String? {
+//        coin.prettyChange
+//    }
+//    
+//    var isRatePositive: Bool {
+//        (coin.priceChange1w ?? .zero) > .zero
+//    }
+//    
+//    var iconUrl: URL {
+//        coin.iconUrl
+//    }
     
-    var price: String? {
-        coin.prettyPrice
-    }
-    
-    var rate: String? {
-        coin.prettyChange
-    }
-    
-    var isRatePositive: Bool {
-        (coin.priceChange1w ?? .zero) > .zero
-    }
-    
-    var iconUrl: URL {
-        coin.iconUrl
-    }
-    
-    init(coin: Photo) {
-        self.coin = coin
+    init(photo: Photo) {
+        self.photo = photo
     }
     
     func fetchChart() {
-        guard let id = coin.id else { return }
+        guard let id = photo.id else { return }
         provider.request(.chart(id: id, period: "1w")) { result in
             switch result {
             case .failure(let error):
@@ -72,7 +72,7 @@ final class CryptoDetailViewModel {
     }
     
     func addFavorite() {
-        guard let id = coin.id,
+        guard let id = photo.id,
               let uid = defaults.string(forKey: UserDefaultConstants.uid.rawValue) else {
             return
         }
@@ -81,6 +81,6 @@ final class CryptoDetailViewModel {
             "favorites": FieldValue.arrayUnion([id])
         ])
         
-        delegate?.didCoinAddedToFavorites?()
+        delegate?.didPhotoAddedToFavorites?()
     }
 }

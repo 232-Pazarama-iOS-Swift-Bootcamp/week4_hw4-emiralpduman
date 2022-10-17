@@ -17,9 +17,9 @@ final class CryptoDetailViewController: FAViewController {
         return view
     }()
     
-    private var viewModel: CryptoDetailViewModel
+    private var viewModel: PhotoDetailViewModel
     
-    init(viewModel: CryptoDetailViewModel) {
+    init(viewModel: PhotoDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -36,12 +36,12 @@ final class CryptoDetailViewController: FAViewController {
         
         viewModel.delegate = self
         
-        cryptoDetailView.coinName = viewModel.coinName
-        cryptoDetailView.price = viewModel.price
-        cryptoDetailView.isRatePositive = viewModel.isRatePositive
-        cryptoDetailView.rate = viewModel.rate
+//        cryptoDetailView.coinName = viewModel.coinName
+//        cryptoDetailView.price = viewModel.price
+//        cryptoDetailView.isRatePositive = viewModel.isRatePositive
+//        cryptoDetailView.rate = viewModel.rate
         
-        cryptoDetailView.iconImageView.kf.setImage(with: viewModel.iconUrl)
+//        cryptoDetailView.iconImageView.kf.setImage(with: viewModel.iconUrl)
         
         cryptoDetailView.setChartViewDelegate(self)
         
@@ -68,8 +68,8 @@ final class CryptoDetailViewController: FAViewController {
     }
 }
 
-// MARK: - CryptoDetailDelegate
-extension CryptoDetailViewController: CryptoDetailDelegate {
+// MARK: - PhotoDetailDelegate
+extension CryptoDetailViewController: PhotoDetailDelegate {
     func didErrorOccurred(_ error: Error) {
         showAlert(title: "Bir Sorun Oluştu",
                   message: error.localizedDescription)
@@ -79,10 +79,10 @@ extension CryptoDetailViewController: CryptoDetailDelegate {
         setData()
     }
     
-    func didCoinAddedToFavorites() {
+    func didPhotoAddedToFavorites() {
         cryptoDetailView.addFavoriteButton.setTitle("Remove From Favorite", for: .normal)
         cryptoDetailView.addFavoriteButton.backgroundColor = .systemRed
-        NotificationCenter().post(name: NSNotification.Name("didAnyCoinAddedToFavorites"), object: nil)
+        NotificationCenter().post(name: NSNotification.Name("didAnyPhotoAddedToFavorites"), object: nil)
     }
 }
 

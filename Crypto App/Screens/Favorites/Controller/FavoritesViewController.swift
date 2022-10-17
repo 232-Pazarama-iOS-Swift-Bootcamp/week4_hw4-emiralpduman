@@ -11,7 +11,7 @@ final class FavoritesViewController: FAViewController {
     
     private let viewModel: FavoritesViewModel
     
-    private var isAnyCoinAddedToFavorites: Bool = true
+    private var isAnyPhotoAddedToFavorites: Bool = true
 
     @IBOutlet private weak var tableView: UITableView!
     
@@ -36,27 +36,27 @@ final class FavoritesViewController: FAViewController {
                                   image: tabBarIcon,
                                   tag: .zero)
         
-        let nib = UINib(nibName: "CoinTableViewCell", bundle: nil)
+        let nib = UINib(nibName: "PhotoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         
         //fetchFavorites()
         
         NotificationCenter().addObserver(self,
-                                         selector: #selector(self.didAnyCoinAddedToFavorites),
-                                         name: NSNotification.Name("didAnyCoinAddedToFavorites"),
+                                         selector: #selector(self.didAnyPhotoAddedToFavorites),
+                                         name: NSNotification.Name("didAnyPhotoAddedToFavorites"),
                                          object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        isAnyCoinAddedToFavorites = true
+        isAnyPhotoAddedToFavorites = true
         fetchFavorites()
     }
     
     // MARK: - Methods
     private func fetchFavorites() {
-        if isAnyCoinAddedToFavorites {
-            isAnyCoinAddedToFavorites = false
+        if isAnyPhotoAddedToFavorites {
+            isAnyPhotoAddedToFavorites = false
             viewModel.fetchFavorites { error in
                 if let error = error {
                     self.showError(error)
@@ -67,8 +67,8 @@ final class FavoritesViewController: FAViewController {
         }
     }
     
-    @objc private func didAnyCoinAddedToFavorites() {
-        isAnyCoinAddedToFavorites = true
+    @objc private func didAnyPhotoAddedToFavorites() {
+        isAnyPhotoAddedToFavorites = true
     }
 }
 
@@ -85,16 +85,16 @@ extension FavoritesViewController: UITableViewDataSource {
         // swiftlint:disable force_cast
         // disabled code comes here
         // swiftlint:enable force_cast
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CoinTableViewCell else {
-            fatalError("CoinTableViewCell not found.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PhotoTableViewCell else {
+            fatalError("PhotoTableViewCell not found.")
         }
-        guard let coin = viewModel.coinForIndexPath(indexPath) else {
-            fatalError("coin not found.")
+        guard let photo = viewModel.photoForIndexPath(indexPath) else {
+            fatalError("photo not found.")
         }
         
-        cell.title = coin.name
-        cell.price = coin.prettyPrice
-        cell.imageView?.kf.setImage(with: coin.iconUrl) { _ in
+//        cell.title = coin.name
+//        cell.price = coin.prettyPrice
+        cell.imageView?.kf.setImage(with: photo.url) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }
         
