@@ -1,6 +1,6 @@
 //
 //  ProfileViewController.swift
-//  Crypto App
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 16.10.2022.
 //
@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-final class ProfileViewController: CAViewController {
+final class ProfileViewController: FAViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

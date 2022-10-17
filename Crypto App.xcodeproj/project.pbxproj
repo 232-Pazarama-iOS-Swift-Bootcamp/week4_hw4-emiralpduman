@@ -15,7 +15,7 @@
 		ED4CE41828F15266002A38FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE41728F15266002A38FE /* AppDelegate.swift */; };
 		ED4CE42128F15267002A38FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE42028F15267002A38FE /* Assets.xcassets */; };
 		ED4CE42428F15267002A38FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE42228F15267002A38FE /* LaunchScreen.storyboard */; };
-		ED4CE43028F160C4002A38FE /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE42E28F160C4002A38FE /* CryptoListViewController.swift */; };
+		ED4CE43028F160C4002A38FE /* RecentPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE42E28F160C4002A38FE /* RecentPhotosViewController.swift */; };
 		ED89E2FF28F29D1300C96D75 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = ED89E2FE28F29D1300C96D75 /* Charts */; };
 		ED89E30228F2ABE900C96D75 /* CryptoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89E30128F2ABE900C96D75 /* CryptoDetailViewModel.swift */; };
 		ED89E30528F2B7A800C96D75 /* ChartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89E30428F2B7A800C96D75 /* ChartResponse.swift */; };
@@ -30,15 +30,15 @@
 		ED89E32128F2D92800C96D75 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89E32028F2D92800C96D75 /* AuthViewModel.swift */; };
 		ED9E9E5F28F1612C00B048B0 /* CryptoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9E9E5E28F1612C00B048B0 /* CryptoListViewController.xib */; };
 		ED9E9E6728F16C8D00B048B0 /* CoinStatsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6628F16C8D00B048B0 /* CoinStatsAPI.swift */; };
-		ED9E9E6A28F179E100B048B0 /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6928F179E100B048B0 /* CryptoListViewModel.swift */; };
-		ED9E9E6D28F17C0A00B048B0 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6C28F17C0A00B048B0 /* Coin.swift */; };
-		ED9E9E6F28F17D4800B048B0 /* CoinsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6E28F17D4800B048B0 /* CoinsResponse.swift */; };
+		ED9E9E6A28F179E100B048B0 /* RecentPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6928F179E100B048B0 /* RecentPhotosViewModel.swift */; };
+		ED9E9E6D28F17C0A00B048B0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6C28F17C0A00B048B0 /* Photo.swift */; };
+		ED9E9E6F28F17D4800B048B0 /* PhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6E28F17D4800B048B0 /* PhotosResponse.swift */; };
 		ED9E9E7228F183AE00B048B0 /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E7128F183AE00B048B0 /* CoinTableViewCell.swift */; };
 		ED9E9E7428F183D800B048B0 /* CoinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9E9E7328F183D800B048B0 /* CoinTableViewCell.xib */; };
 		ED9E9E7A28F18E2A00B048B0 /* CryptoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E7928F18E2A00B048B0 /* CryptoDetailViewController.swift */; };
 		ED9E9E7E28F18E8500B048B0 /* CryptoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E7D28F18E8500B048B0 /* CryptoDetailView.swift */; };
 		EDC88D9B28FA93C800D8645D /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC88D9A28FA93C800D8645D /* AlertPresentable.swift */; };
-		EDC88D9E28FA978100D8645D /* CAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC88D9D28FA978100D8645D /* CAViewController.swift */; };
+		EDC88D9E28FA978100D8645D /* FAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC88D9D28FA978100D8645D /* FAViewController.swift */; };
 		EDC88DA028FAA40800D8645D /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC88D9F28FAA40800D8645D /* FlickrAPI.swift */; };
 		EDF0F58D28FBDDBB00B7C51D /* CALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0F58C28FBDDBB00B7C51D /* CALabel.swift */; };
 		EDF0F58E28FBDE3700B7C51D /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF0F58A28FBDD1800B7C51D /* Silkscreen-Bold.ttf */; };
@@ -67,7 +67,7 @@
 		ED4CE42028F15267002A38FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED4CE42328F15267002A38FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED4CE42528F15267002A38FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED4CE42E28F160C4002A38FE /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
+		ED4CE42E28F160C4002A38FE /* RecentPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPhotosViewController.swift; sourceTree = "<group>"; };
 		ED89E30128F2ABE900C96D75 /* CryptoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailViewModel.swift; sourceTree = "<group>"; };
 		ED89E30428F2B7A800C96D75 /* ChartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartResponse.swift; sourceTree = "<group>"; };
 		ED89E30B28F2D02500C96D75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -76,15 +76,15 @@
 		ED89E32028F2D92800C96D75 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		ED9E9E5E28F1612C00B048B0 /* CryptoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CryptoListViewController.xib; sourceTree = "<group>"; };
 		ED9E9E6628F16C8D00B048B0 /* CoinStatsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinStatsAPI.swift; sourceTree = "<group>"; };
-		ED9E9E6928F179E100B048B0 /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
-		ED9E9E6C28F17C0A00B048B0 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
-		ED9E9E6E28F17D4800B048B0 /* CoinsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsResponse.swift; sourceTree = "<group>"; };
+		ED9E9E6928F179E100B048B0 /* RecentPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPhotosViewModel.swift; sourceTree = "<group>"; };
+		ED9E9E6C28F17C0A00B048B0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		ED9E9E6E28F17D4800B048B0 /* PhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResponse.swift; sourceTree = "<group>"; };
 		ED9E9E7128F183AE00B048B0 /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
 		ED9E9E7328F183D800B048B0 /* CoinTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinTableViewCell.xib; sourceTree = "<group>"; };
 		ED9E9E7928F18E2A00B048B0 /* CryptoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailViewController.swift; sourceTree = "<group>"; };
 		ED9E9E7D28F18E8500B048B0 /* CryptoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoDetailView.swift; sourceTree = "<group>"; };
 		EDC88D9A28FA93C800D8645D /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
-		EDC88D9D28FA978100D8645D /* CAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAViewController.swift; sourceTree = "<group>"; };
+		EDC88D9D28FA978100D8645D /* FAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAViewController.swift; sourceTree = "<group>"; };
 		EDC88D9F28FAA40800D8645D /* FlickrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
 		EDF0F58A28FBDD1800B7C51D /* Silkscreen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Bold.ttf"; sourceTree = "<group>"; };
 		EDF0F58B28FBDD1800B7C51D /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 		ED4CE43328F160D5002A38FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ED4CE42E28F160C4002A38FE /* CryptoListViewController.swift */,
+				ED4CE42E28F160C4002A38FE /* RecentPhotosViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -361,7 +361,7 @@
 		ED9E9E6828F179D300B048B0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				ED9E9E6928F179E100B048B0 /* CryptoListViewModel.swift */,
+				ED9E9E6928F179E100B048B0 /* RecentPhotosViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -369,8 +369,8 @@
 		ED9E9E6B28F17C0100B048B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ED9E9E6C28F17C0A00B048B0 /* Coin.swift */,
-				ED9E9E6E28F17D4800B048B0 /* CoinsResponse.swift */,
+				ED9E9E6C28F17C0A00B048B0 /* Photo.swift */,
+				ED9E9E6E28F17D4800B048B0 /* PhotosResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 		EDC88D9C28FA972C00D8645D /* CAKit */ = {
 			isa = PBXGroup;
 			children = (
-				EDC88D9D28FA978100D8645D /* CAViewController.swift */,
+				EDC88D9D28FA978100D8645D /* FAViewController.swift */,
 				EDF0F58C28FBDDBB00B7C51D /* CALabel.swift */,
 				EDF0F5BF28FC180000B7C51D /* CAViewModel.swift */,
 			);
@@ -680,19 +680,19 @@
 				EDF0F5C028FC180000B7C51D /* CAViewModel.swift in Sources */,
 				EDC88DA028FAA40800D8645D /* FlickrAPI.swift in Sources */,
 				ED1269E728F86E6500B06DDB /* FavoritesViewModel.swift in Sources */,
-				ED9E9E6F28F17D4800B048B0 /* CoinsResponse.swift in Sources */,
+				ED9E9E6F28F17D4800B048B0 /* PhotosResponse.swift in Sources */,
 				EDF0F5B028FBFA9B00B7C51D /* ProfileViewController.swift in Sources */,
-				ED9E9E6A28F179E100B048B0 /* CryptoListViewModel.swift in Sources */,
+				ED9E9E6A28F179E100B048B0 /* RecentPhotosViewModel.swift in Sources */,
 				EDF0F5AB28FBF5BF00B7C51D /* Fonts.swift in Sources */,
 				ED89E31B28F2D6F900C96D75 /* AuthViewController.swift in Sources */,
 				ED9E9E6728F16C8D00B048B0 /* CoinStatsAPI.swift in Sources */,
-				EDC88D9E28FA978100D8645D /* CAViewController.swift in Sources */,
+				EDC88D9E28FA978100D8645D /* FAViewController.swift in Sources */,
 				EDF0F58D28FBDDBB00B7C51D /* CALabel.swift in Sources */,
 				EDF0F5B928FC082500B7C51D /* Encodable+Extensions.swift in Sources */,
 				ED9E9E7A28F18E2A00B048B0 /* CryptoDetailViewController.swift in Sources */,
-				ED9E9E6D28F17C0A00B048B0 /* Coin.swift in Sources */,
+				ED9E9E6D28F17C0A00B048B0 /* Photo.swift in Sources */,
 				ED89E30228F2ABE900C96D75 /* CryptoDetailViewModel.swift in Sources */,
-				ED4CE43028F160C4002A38FE /* CryptoListViewController.swift in Sources */,
+				ED4CE43028F160C4002A38FE /* RecentPhotosViewController.swift in Sources */,
 				ED9E9E7228F183AE00B048B0 /* CoinTableViewCell.swift in Sources */,
 				ED89E32128F2D92800C96D75 /* AuthViewModel.swift in Sources */,
 				ED1269E128F86E4200B06DDB /* FavoritesViewController.swift in Sources */,

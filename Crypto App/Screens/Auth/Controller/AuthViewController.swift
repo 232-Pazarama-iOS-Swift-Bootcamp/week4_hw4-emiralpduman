@@ -1,13 +1,13 @@
 //
 //  AuthViewController.swift
-//  Crypto App
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 9.10.2022.
 //
 
 import UIKit
 
-final class AuthViewController: CAViewController {
+final class AuthViewController: FAViewController {
     
     private let viewModel: AuthViewModel
     
@@ -90,8 +90,8 @@ final class AuthViewController: CAViewController {
                              password: password,
                              completion: { [weak self] in
                 guard let self = self else { return }
-                let cryptoListViewModel = CryptoListViewModel()
-                let cryptoListViewController = CryptoListViewController(viewModel: cryptoListViewModel)
+                let cryptoListViewModel = RecentPhotosViewModel()
+                let cryptoListViewController = RecentPhotosViewController(viewModel: cryptoListViewModel)
                 
                 let favoritesViewModel = FavoritesViewModel()
                 let favoritesViewController = FavoritesViewController(viewModel: favoritesViewModel)

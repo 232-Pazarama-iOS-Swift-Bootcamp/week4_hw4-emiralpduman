@@ -1,6 +1,6 @@
 //
 //  CryptoDetailViewModel.swift
-//  Crypto App
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 9.10.2022.
 //
@@ -22,7 +22,7 @@ final class CryptoDetailViewModel {
     
     private let defaults = UserDefaults.standard
     
-    private var coin: Coin
+    private var coin: Photo
     
     private(set) var chartResponse: ChartResponse? {
         didSet {
@@ -50,7 +50,7 @@ final class CryptoDetailViewModel {
         coin.iconUrl
     }
     
-    init(coin: Coin) {
+    init(coin: Photo) {
         self.coin = coin
     }
     

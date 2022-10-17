@@ -1,24 +1,20 @@
 //
-//  CryptoListViewController.swift
-//  Crypto App
+//  RecentPhotosViewController.swift
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 8.10.2022.
 //
 
-// Referance Counter
-// table: 1
-// view: 1
-
 import UIKit
 import Kingfisher
 
-final class CryptoListViewController: CAViewController  {
-    private var viewModel: CryptoListViewModel
-
+final class RecentPhotosViewController: FAViewController  {
+    private var viewModel: RecentPhotosViewModel
+    
     @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Init
-    init(viewModel: CryptoListViewModel) {
+    init(viewModel: RecentPhotosViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,21 +27,21 @@ final class CryptoListViewController: CAViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Coins"
+        title = "Recent"
         let tabBarIcon = Asset.home.image
-        tabBarItem = UITabBarItem(title: "Coins",
+        tabBarItem = UITabBarItem(title: "Recent",
                                   image: tabBarIcon,
                                   tag: .zero)
-
+        
         tabBarController?.navigationItem.hidesBackButton = true
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        let nib = UINib(nibName: "CoinTableViewCell", bundle: nil)
+        let nib = UINib(nibName: "RecentsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         
-        viewModel.fetchCoins()
+        viewModel.fetchPhotos()
         
         viewModel.changeHandler = { change in
             switch change {
@@ -59,9 +55,9 @@ final class CryptoListViewController: CAViewController  {
 }
 
 // MARK: - UITableViewDelegate
-extension CryptoListViewController: UITableViewDelegate {
+extension RecentPhotosViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let coin = viewModel.coinForIndexPath(indexPath) else {
+        guard let coin = viewModel.photoForIndexPath(indexPath) else {
             return
         }
         let viewModel = CryptoDetailViewModel(coin: coin)
@@ -71,7 +67,7 @@ extension CryptoListViewController: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource
-extension CryptoListViewController: UITableViewDataSource {
+extension RecentPhotosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows
     }
@@ -80,12 +76,9 @@ extension CryptoListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CoinTableViewCell else {
             fatalError("CoinTableViewCell not found.")
         }
-        guard let coin = viewModel.coinForIndexPath(indexPath) else {
+        guard let coin = viewModel.photoForIndexPath(indexPath) else {
             fatalError("coin not found.")
         }
-        
-        cell.title = coin.name
-        cell.price = coin.prettyPrice
         cell.imageView?.kf.setImage(with: coin.iconUrl) { _ in
             tableView.reloadRows(at: [indexPath], with: .automatic)
         }

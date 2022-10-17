@@ -1,6 +1,6 @@
 //
 //  FavoritesViewModel.swift
-//  Crypto App
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 13.10.2022.
 //

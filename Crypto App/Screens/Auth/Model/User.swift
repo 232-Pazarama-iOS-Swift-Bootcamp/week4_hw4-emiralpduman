@@ -1,6 +1,6 @@
 //
 //  User.swift
-//  Crypto App
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 16.10.2022.
 //

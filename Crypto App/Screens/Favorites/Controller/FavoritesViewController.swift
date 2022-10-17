@@ -1,13 +1,13 @@
 //
 //  FavoritesViewController.swift
-//  Crypto App
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 13.10.2022.
 //
 
 import UIKit
 
-final class FavoritesViewController: CAViewController {
+final class FavoritesViewController: FAViewController {
     
     private let viewModel: FavoritesViewModel
     

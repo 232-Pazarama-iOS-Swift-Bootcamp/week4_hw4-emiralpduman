@@ -1,6 +1,6 @@
 //
 //  CryptoDetailViewController.swift
-//  Crypto App
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 8.10.2022.
 //
@@ -9,7 +9,7 @@ import UIKit
 import Charts
 import Kingfisher
 
-final class CryptoDetailViewController: CAViewController {
+final class CryptoDetailViewController: FAViewController {
     
     private lazy var cryptoDetailView: CryptoDetailView = {
         let view = CryptoDetailView()
@@ -31,7 +31,7 @@ final class CryptoDetailViewController: CAViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Coin Detail"
+        title = "Photo Detail"
         view = cryptoDetailView
         
         viewModel.delegate = self

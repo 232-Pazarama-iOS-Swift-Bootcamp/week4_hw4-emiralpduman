@@ -1,6 +1,6 @@
 //
-//  CryptoListViewModel.swift
-//  Crypto App
+//  RecentPhotosViewModel.swift
+//  Flickr App
 //
 //  Created by Pazarama iOS Bootcamp on 8.10.2022.
 //
@@ -9,13 +9,13 @@ import Foundation
 import Moya
 import FirebaseFirestore
 
-enum CryptoListChanges {
+enum RecentsListChanges {
     case didErrorOccurred(_ error: Error)
     case didFetchCoins
 }
 
-final class CryptoListViewModel {
-    private var coinsResponse: CoinsResponse? {
+final class RecentPhotosViewModel {
+    private var photosResponse: PhotosResponse? {
         didSet {
             self.changeHandler?(.didFetchCoins)
         }
@@ -23,24 +23,25 @@ final class CryptoListViewModel {
     
     private let db = Firestore.firestore()
     
-    var changeHandler: ((CryptoListChanges) -> Void)?
+    var changeHandler: ((RecentsListChanges) -> Void)?
     
     var numberOfRows: Int {
-        coinsResponse?.coins?.count ?? .zero
+        
+        photosResponse?.photos?.photo?.count ?? .zero
     }
     
-    func fetchCoins() {
-        provider.request(.coins) { result in
+    func fetchPhotos() {
+        flickrApiProvider.request(.getRecentPhotos) { result in
             switch result {
             case .failure(let error):
                 self.changeHandler?(.didErrorOccurred(error))
             case .success(let response):
                 do {
-                    let coinsResponse = try JSONDecoder().decode(CoinsResponse.self, from: response.data)
+                    let photosResponse = try JSONDecoder().decode(PhotosResponse.self, from: response.data)
                     
-                    self.addCoinsToFirebaseFirestore(coinsResponse.coins)
+                    self.addPhotosToFirebaseFirestore(photosResponse.photos?.photo)
                     
-                    self.coinsResponse = coinsResponse
+                    self.photosResponse = photosResponse
                 } catch {
                     self.changeHandler?(.didErrorOccurred(error))
                 }
@@ -48,17 +49,17 @@ final class CryptoListViewModel {
         }
     }
     
-    private func addCoinsToFirebaseFirestore(_ coins: [Coin]?) {
-        guard let coins = coins else {
+    private func addPhotosToFirebaseFirestore(_ photos: [Photo]?) {
+        guard let photos = photos else {
             return
         }
-        coins.forEach { coin in
+        photos.forEach { photo in
             do {
-                guard let data = try coin.dictionary, let id = coin.id else {
+                guard let data = try photo.dictionary, let id = photo.id else {
                     return
                 }
                 
-                db.collection("coins").document(id).setData(data) { error in
+                db.collection("photos").document(id).setData(data) { error in
                     
                     if let error = error {
                         self.changeHandler?(.didErrorOccurred(error))
@@ -70,7 +71,7 @@ final class CryptoListViewModel {
         }
     }
     
-    func coinForIndexPath(_ indexPath: IndexPath) -> Coin? {
-        coinsResponse?.coins?[indexPath.row]
+    func photoForIndexPath(_ indexPath: IndexPath) -> Photo? {
+        photosResponse?.photos?.photo?[indexPath.row]
     }
 }
