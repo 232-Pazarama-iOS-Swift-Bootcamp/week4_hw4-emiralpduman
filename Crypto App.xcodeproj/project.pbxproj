@@ -29,7 +29,6 @@
 		ED89E31C28F2D6F900C96D75 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED89E31A28F2D6F900C96D75 /* AuthViewController.xib */; };
 		ED89E32128F2D92800C96D75 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED89E32028F2D92800C96D75 /* AuthViewModel.swift */; };
 		ED9E9E5F28F1612C00B048B0 /* RecentPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED9E9E5E28F1612C00B048B0 /* RecentPhotosViewController.xib */; };
-		ED9E9E6728F16C8D00B048B0 /* CoinStatsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6628F16C8D00B048B0 /* CoinStatsAPI.swift */; };
 		ED9E9E6A28F179E100B048B0 /* RecentPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6928F179E100B048B0 /* RecentPhotosViewModel.swift */; };
 		ED9E9E6D28F17C0A00B048B0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6C28F17C0A00B048B0 /* Photo.swift */; };
 		ED9E9E6F28F17D4800B048B0 /* PhotosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9E9E6E28F17D4800B048B0 /* PhotosResponse.swift */; };
@@ -53,6 +52,11 @@
 		EDF0F5BE28FC179F00B7C51D /* UserDefaultsAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0F5BD28FC179F00B7C51D /* UserDefaultsAccessible.swift */; };
 		EDF0F5C028FC180000B7C51D /* FAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0F5BF28FC180000B7C51D /* FAViewModel.swift */; };
 		EDF0F5C228FC182A00B7C51D /* FireBaseFireStoreAccessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0F5C128FC182A00B7C51D /* FireBaseFireStoreAccessible.swift */; };
+		F3BFC14328FEBC33004E68A1 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BFC14228FEBC33004E68A1 /* SearchViewModel.swift */; };
+		F3BFC14528FEC247004E68A1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BFC14428FEC247004E68A1 /* SearchViewController.swift */; };
+		F3BFC14728FEC308004E68A1 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3BFC14628FEC308004E68A1 /* SearchViewController.storyboard */; };
+		F3BFC14B28FEC33F004E68A1 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BFC14928FEC33F004E68A1 /* SearchCollectionViewCell.swift */; };
+		F3BFC14C28FEC33F004E68A1 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BFC14A28FEC33F004E68A1 /* SearchCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +79,6 @@
 		ED89E31A28F2D6F900C96D75 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		ED89E32028F2D92800C96D75 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		ED9E9E5E28F1612C00B048B0 /* RecentPhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentPhotosViewController.xib; sourceTree = "<group>"; };
-		ED9E9E6628F16C8D00B048B0 /* CoinStatsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinStatsAPI.swift; sourceTree = "<group>"; };
 		ED9E9E6928F179E100B048B0 /* RecentPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPhotosViewModel.swift; sourceTree = "<group>"; };
 		ED9E9E6C28F17C0A00B048B0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		ED9E9E6E28F17D4800B048B0 /* PhotosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosResponse.swift; sourceTree = "<group>"; };
@@ -99,6 +102,11 @@
 		EDF0F5BD28FC179F00B7C51D /* UserDefaultsAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAccessible.swift; sourceTree = "<group>"; };
 		EDF0F5BF28FC180000B7C51D /* FAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAViewModel.swift; sourceTree = "<group>"; };
 		EDF0F5C128FC182A00B7C51D /* FireBaseFireStoreAccessible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseFireStoreAccessible.swift; sourceTree = "<group>"; };
+		F3BFC14228FEBC33004E68A1 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = ../../../../../../../../../Desktop/SearchViewModel.swift; sourceTree = "<group>"; };
+		F3BFC14428FEC247004E68A1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F3BFC14628FEC308004E68A1 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		F3BFC14928FEC33F004E68A1 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3BFC14A28FEC33F004E68A1 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		F9EAADB531860ED534304545 /* Pods_Crypto_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -213,6 +221,7 @@
 		ED4CE42C28F1527F002A38FE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F3BFC13C28FEBBBB004E68A1 /* Search */,
 				EDF0F5AD28FBFA8600B7C51D /* Profile */,
 				ED1269DE28F86E3400B06DDB /* Favorites */,
 				ED89E31828F2D6DD00C96D75 /* Auth */,
@@ -352,7 +361,6 @@
 		ED9E9E6528F16C6200B048B0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				ED9E9E6628F16C8D00B048B0 /* CoinStatsAPI.swift */,
 				EDC88D9F28FAA40800D8645D /* FlickrAPI.swift */,
 			);
 			path = Network;
@@ -498,6 +506,50 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		F3BFC13C28FEBBBB004E68A1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F3BFC13F28FEBBD5004E68A1 /* ViewModel */,
+				F3BFC14028FEBBDA004E68A1 /* Controller */,
+				F3BFC14128FEBBDF004E68A1 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F3BFC13F28FEBBD5004E68A1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3BFC14228FEBC33004E68A1 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3BFC14028FEBBDA004E68A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F3BFC14428FEC247004E68A1 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F3BFC14128FEBBDF004E68A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3BFC14828FEC31F004E68A1 /* ViewCell */,
+				F3BFC14628FEC308004E68A1 /* SearchViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3BFC14828FEC31F004E68A1 /* ViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F3BFC14928FEC33F004E68A1 /* SearchCollectionViewCell.swift */,
+				F3BFC14A28FEC33F004E68A1 /* SearchCollectionViewCell.xib */,
+			);
+			path = ViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -583,6 +635,8 @@
 				ED89E31C28F2D6F900C96D75 /* AuthViewController.xib in Resources */,
 				ED1269E228F86E4200B06DDB /* FavoritesViewController.xib in Resources */,
 				ED9E9E5F28F1612C00B048B0 /* RecentPhotosViewController.xib in Resources */,
+				F3BFC14728FEC308004E68A1 /* SearchViewController.storyboard in Resources */,
+				F3BFC14C28FEC33F004E68A1 /* SearchCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,20 +739,22 @@
 				ED9E9E6A28F179E100B048B0 /* RecentPhotosViewModel.swift in Sources */,
 				EDF0F5AB28FBF5BF00B7C51D /* Fonts.swift in Sources */,
 				ED89E31B28F2D6F900C96D75 /* AuthViewController.swift in Sources */,
-				ED9E9E6728F16C8D00B048B0 /* CoinStatsAPI.swift in Sources */,
 				EDC88D9E28FA978100D8645D /* FAViewController.swift in Sources */,
 				EDF0F58D28FBDDBB00B7C51D /* CALabel.swift in Sources */,
 				EDF0F5B928FC082500B7C51D /* Encodable+Extensions.swift in Sources */,
+				F3BFC14328FEBC33004E68A1 /* SearchViewModel.swift in Sources */,
 				ED9E9E7A28F18E2A00B048B0 /* CryptoDetailViewController.swift in Sources */,
 				ED9E9E6D28F17C0A00B048B0 /* Photo.swift in Sources */,
 				ED89E30228F2ABE900C96D75 /* PhotoDetailViewModel.swift in Sources */,
 				ED4CE43028F160C4002A38FE /* RecentPhotosViewController.swift in Sources */,
 				ED9E9E7228F183AE00B048B0 /* PhotoTableViewCell.swift in Sources */,
 				ED89E32128F2D92800C96D75 /* AuthViewModel.swift in Sources */,
+				F3BFC14B28FEC33F004E68A1 /* SearchCollectionViewCell.swift in Sources */,
 				ED1269E128F86E4200B06DDB /* FavoritesViewController.swift in Sources */,
 				EDF0F5A928FBEFA100B7C51D /* Assets.swift in Sources */,
 				ED9E9E7E28F18E8500B048B0 /* CryptoDetailView.swift in Sources */,
 				EDF0F5B628FC067D00B7C51D /* User.swift in Sources */,
+				F3BFC14528FEC247004E68A1 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

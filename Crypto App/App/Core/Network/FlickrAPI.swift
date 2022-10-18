@@ -12,10 +12,15 @@ let flickrApiProvider = MoyaProvider<FlickrAPI>()
 
 enum FlickrAPI {
     case getRecentPhotos
+    case searchPhotos(String = "outdoor")
 }
 
 extension FlickrAPI: TargetType {
-    //https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&format=json&nojsoncallback=1&api_key=cb43d0de658a4d9e6cabac4c762c732e&extras=owner_name%2C+url_c
+    
+    /*
+     getRecentPhotos = https://www.flickr.com/services/rest/?api_key=c8876faae75a89bd6533b2ba76f2cf64&format=json&method=flickr.photos.getRecent&extras=url_c
+     searchPhotos = https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=c8876faae75a89bd6533b2ba76f2cf64&text=outdoor&extras=url_c&format=json&nojsoncallback=1
+     */
     
     var baseURL: URL {
         guard let url = URL(string: "https://www.flickr.com/services/rest") else {
@@ -33,12 +38,24 @@ extension FlickrAPI: TargetType {
     }
     
     var task: Moya.Task {
-        let parameters: [String : Any] = ["method" : "flickr.photos.getRecent",
-                                          "format" : "json",
-                                          "nojsoncallback" : 1,
-                                          "api_key" : "c8876faae75a89bd6533b2ba76f2cf64",
-                                          "extras" : "owner_name, url_c"]
-        return .requestParameters(parameters:  parameters, encoding: URLEncoding.queryString)
+        switch self {
+        case .getRecentPhotos:
+            let parameters: [String : Any] = ["method" : "flickr.photos.getRecent",
+                                              "format" : "json",
+                                              "nojsoncallback" : 1,
+                                              "api_key" : "c8876faae75a89bd6533b2ba76f2cf64",
+                                              "extras" : "owner_name, url_c"]
+            return .requestParameters(parameters:  parameters, encoding: URLEncoding.queryString)
+        case .searchPhotos(let searchText):
+            let parameters: [String : Any] = ["method" : "flickr.photos.search",
+                                              "format" : "json",
+                                              "nojsoncallback" : 1,
+                                              "api_key" : "c8876faae75a89bd6533b2ba76f2cf64",
+                                              "extras" : "url_c",
+                                              "text" : searchText ]
+            return .requestParameters(parameters:  parameters, encoding: URLEncoding.queryString)
+        }
+        
     }
     
     var headers: [String : String]? {

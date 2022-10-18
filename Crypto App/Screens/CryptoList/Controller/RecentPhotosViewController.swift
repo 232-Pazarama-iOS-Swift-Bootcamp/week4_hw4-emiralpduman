@@ -48,7 +48,7 @@ final class RecentPhotosViewController: FAViewController  {
         tableView.dataSource = self
         
         let nib = UINib(nibName: "PhotoTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "cell")
+        tableView.register(nib, forCellReuseIdentifier: "photoTableViewCell")
         tableView.rowHeight = 500
         
         viewModel.fetchPhotos()
@@ -83,7 +83,7 @@ extension RecentPhotosViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PhotoTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "photoTableViewCell", for: indexPath) as? PhotoTableViewCell else {
             fatalError("PhotoTableViewCell not found.")
         }
         guard let photo = viewModel.photoForIndexPath(indexPath) else {
