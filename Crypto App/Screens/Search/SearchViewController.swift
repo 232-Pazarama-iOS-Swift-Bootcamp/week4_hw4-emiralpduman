@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import Kingfisher
 
 class SearchViewController: FAViewController {
     private var viewModel: SearchViewModel
-    
+
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
     init(viewModel: SearchViewModel) {
@@ -22,29 +21,35 @@ class SearchViewController: FAViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
+        let tabBarIcon = Asset.home.image
+        tabBarItem = UITabBarItem(title: "Search",
+                                  image: tabBarIcon,
+                                  tag: .zero)
         
         photosCollectionView.delegate = self
         photosCollectionView.dataSource = self
         
+        let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
+        photosCollectionView.register(nib, forCellWithReuseIdentifier: "searchCollectionViewCell")
+//        tableView.rowHeight = 500
+        
+        viewModel.fetchPhotos()
+        
+        viewModel.changeHandler = { change in
+            switch change {
+            case .didFetchPhotos:
+                self.photosCollectionView.reloadData()
+            case .didErrorOccurred(let error):
+                self.showError(error)
+            }
+        }
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
-
 // MARK: - UITableViewDelegate
 extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -58,7 +63,6 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfRows
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,7 +70,6 @@ extension SearchViewController: UICollectionViewDataSource {
             fatalError("SearchCollectionViewCell not found.")
 
         }
-
         guard let photo = viewModel.photoForIndexPath(indexPath) else {
             fatalError("photo not found.")
         }
@@ -76,3 +79,25 @@ extension SearchViewController: UICollectionViewDataSource {
     }
 }
 
+class photosCollectionViewFlowLayout: UICollectionViewFlowLayout {
+    override func prepare() {
+        super.prepare()
+
+        guard let collectionView = collectionView else { return }
+        
+        let availableWidth = collectionView.bounds.inset(by: collectionView.layoutMargins).width
+        let maxNumColumns = 3
+        let cellWidth = (availableWidth / CGFloat(maxNumColumns)).rounded(.down)
+        
+        let cellAspectRatio: CGFloat = 3/4
+        let cellHeight: CGFloat = cellWidth * cellAspectRatio
+        
+        self.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        
+        let defaultInset: CGFloat = 20
+        
+        self.sectionInset = UIEdgeInsets(top: self.minimumInteritemSpacing, left: defaultInset, bottom: defaultInset, right: defaultInset)
+        self.sectionInsetReference = .fromSafeArea
+    }
+
+}

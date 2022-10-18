@@ -93,14 +93,14 @@ final class AuthViewController: FAViewController {
                 let cryptoListViewModel = RecentPhotosViewModel()
                 let PhotoListViewController = RecentPhotosViewController(viewModel: cryptoListViewModel)
                 
-                let favoritesViewModel = FavoritesViewModel()
-                let favoritesViewController = FavoritesViewController(viewModel: favoritesViewModel)
+                let searchViewModel = SearchViewModel()
+                let searchViewController = SearchViewController(viewModel: searchViewModel)
                 
                 let profileViewController = ProfileViewController()
                 
                 let tabBarController = UITabBarController()
                 tabBarController.viewControllers = [PhotoListViewController,
-                                                    favoritesViewController,
+                                                    searchViewController,
                                                     profileViewController]
                 self.navigationController?.pushViewController(tabBarController, animated: true)
             })
