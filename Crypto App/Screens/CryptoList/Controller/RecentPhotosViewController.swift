@@ -11,6 +11,15 @@ import Kingfisher
 final class RecentPhotosViewController: FAViewController  {
     private var viewModel: RecentPhotosViewModel
     
+    var userName: String = "UserName" {
+        didSet {
+            userNameLabel.text = userName
+        }
+    }
+    
+    
+    //MARK: -Views
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Init
@@ -80,10 +89,7 @@ extension RecentPhotosViewController: UITableViewDataSource {
         guard let photo = viewModel.photoForIndexPath(indexPath) else {
             fatalError("photo not found.")
         }
-        cell.imageView?.kf.setImage(with: photo.url) { _ in
-            tableView.reloadRows(at: [indexPath], with: .automatic)
-        }
-        
+        cell.iconImageView.kf.setImage(with: photo.url) { _ in }
         return cell
     }
 }

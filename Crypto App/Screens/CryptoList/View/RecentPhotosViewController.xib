@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecentPhotosViewController" customModule="Crypto_App" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="a2j-VZ-12k" id="Vjl-BG-QQ1"/>
+                <outlet property="userNameLabel" destination="8gA-sv-aZD" id="TyQ-Jq-6Fp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,26 +23,47 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="80" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-VZ-12k">
-                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                    <rect key="frame" x="0.0" y="77.333333333333314" width="390" height="732.66666666666674"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="nSf-Nu-rJr"/>
                         <outlet property="delegate" destination="-1" id="6Ms-Pg-6bV"/>
                     </connections>
                 </tableView>
+                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-17-pBq">
+                    <rect key="frame" x="0.0" y="47" width="390" height="20.333333333333329"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ea0-Lp-ngI">
+                            <rect key="frame" x="0.0" y="-1.6666666666666679" width="195" height="23.666666666666668"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageReference key="image" image="brain.head.profile" catalog="system" variableValue="0.80000000000000004"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gA-sv-aZD">
+                            <rect key="frame" x="195" y="0.0" width="195" height="20.333333333333332"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="a2j-VZ-12k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0xP-gu-CzH"/>
-                <constraint firstItem="a2j-VZ-12k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e9N-KO-Hb5"/>
-                <constraint firstAttribute="bottom" secondItem="a2j-VZ-12k" secondAttribute="bottom" id="gHT-NO-wIq"/>
-                <constraint firstItem="a2j-VZ-12k" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gtC-a4-5sz"/>
+                <constraint firstItem="a2j-VZ-12k" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7vk-UA-rcZ"/>
+                <constraint firstItem="a2j-VZ-12k" firstAttribute="top" secondItem="HBj-17-pBq" secondAttribute="bottom" constant="10" id="Cku-Aa-X3a"/>
+                <constraint firstItem="a2j-VZ-12k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Lhe-ml-orR"/>
+                <constraint firstItem="a2j-VZ-12k" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Mzn-iR-1Ai"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HBj-17-pBq" secondAttribute="trailing" id="WQV-IZ-ZqH"/>
+                <constraint firstItem="HBj-17-pBq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Zey-zp-deh"/>
+                <constraint firstItem="a2j-VZ-12k" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="czn-SM-mt7"/>
+                <constraint firstItem="HBj-17-pBq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hog-yH-QAc"/>
             </constraints>
             <point key="canvasLocation" x="136.92307692307691" y="20.616113744075829"/>
         </view>
     </objects>
     <resources>
+        <image name="brain.head.profile" catalog="system" width="120" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

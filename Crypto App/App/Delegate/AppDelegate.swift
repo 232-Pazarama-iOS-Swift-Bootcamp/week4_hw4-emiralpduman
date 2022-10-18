@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let viewModel = AuthViewModel()
         let viewController = AuthViewController(viewModel: viewModel)
+//        let viewController = RecentPhotosViewController(viewModel: RecentPhotosViewModel())
+
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
