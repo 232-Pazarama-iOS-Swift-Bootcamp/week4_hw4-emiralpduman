@@ -10,6 +10,7 @@ import UIKit
 class SearchViewController: FAViewController {
     private var viewModel: SearchViewModel
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
     init(viewModel: SearchViewModel) {
@@ -32,6 +33,8 @@ class SearchViewController: FAViewController {
         
         photosCollectionView.delegate = self
         photosCollectionView.dataSource = self
+        
+        searchBar.delegate = self
         
         let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
         photosCollectionView.register(nib, forCellWithReuseIdentifier: "searchCollectionViewCell")
@@ -101,3 +104,14 @@ class photosCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
 
 }
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let text = searchBar.text, text.count > 1 {
+            viewModel.searchPhotos(keyword: text)
+        }
+    }
+}
+
+
+
