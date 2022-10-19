@@ -17,7 +17,6 @@
 		ED4CE42428F15267002A38FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE42228F15267002A38FE /* LaunchScreen.storyboard */; };
 		ED4CE43028F160C4002A38FE /* RecentPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE42E28F160C4002A38FE /* RecentPhotosViewController.swift */; };
 		ED89E2FF28F29D1300C96D75 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = ED89E2FE28F29D1300C96D75 /* Charts */; };
-		ED89E30C28F2D02500C96D75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED89E30B28F2D02500C96D75 /* GoogleService-Info.plist */; };
 		ED89E30F28F2D1C600C96D75 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED89E30E28F2D1C600C96D75 /* FirebaseAuth */; };
 		ED89E31128F2D1C600C96D75 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED89E31028F2D1C600C96D75 /* FirebaseDatabaseSwift */; };
 		ED89E31328F2D1C600C96D75 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED89E31228F2D1C600C96D75 /* FirebaseFirestoreSwift */; };
@@ -53,6 +52,7 @@
 		F3BFC15428FEE602004E68A1 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BFC15228FEE602004E68A1 /* SearchViewController.xib */; };
 		F3BFC15828FEE7BA004E68A1 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BFC15628FEE7BA004E68A1 /* SearchCollectionViewCell.swift */; };
 		F3BFC15928FEE7BA004E68A1 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BFC15728FEE7BA004E68A1 /* SearchCollectionViewCell.xib */; };
+		F3CBD30328FF373C004B0B21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3CBD30228FF373C004B0B21 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +68,6 @@
 		ED4CE42328F15267002A38FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED4CE42528F15267002A38FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED4CE42E28F160C4002A38FE /* RecentPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPhotosViewController.swift; sourceTree = "<group>"; };
-		ED89E30B28F2D02500C96D75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED89E31928F2D6F900C96D75 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		ED89E31A28F2D6F900C96D75 /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
 		ED89E32028F2D92800C96D75 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		F3BFC15228FEE602004E68A1 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		F3BFC15628FEE7BA004E68A1 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		F3BFC15728FEE7BA004E68A1 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		F3CBD30228FF373C004B0B21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F9EAADB531860ED534304545 /* Pods_Crypto_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -326,8 +326,8 @@
 		ED9E9E6428F16C3100B048B0 /* Plists */ = {
 			isa = PBXGroup;
 			children = (
+				F3CBD30228FF373C004B0B21 /* GoogleService-Info.plist */,
 				ED1269D928F85FA300B06DDB /* RemoteConfigDefaults.plist */,
-				ED89E30B28F2D02500C96D75 /* GoogleService-Info.plist */,
 				ED4CE42528F15267002A38FE /* Info.plist */,
 			);
 			path = Plists;
@@ -572,10 +572,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3CBD30328FF373C004B0B21 /* GoogleService-Info.plist in Resources */,
 				ED1269DA28F85FA300B06DDB /* RemoteConfigDefaults.plist in Resources */,
 				ED4CE42428F15267002A38FE /* LaunchScreen.storyboard in Resources */,
 				ED4CE42128F15267002A38FE /* Assets.xcassets in Resources */,
-				ED89E30C28F2D02500C96D75 /* GoogleService-Info.plist in Resources */,
 				EDF0F58F28FBDE3700B7C51D /* Silkscreen-Regular.ttf in Resources */,
 				EDF0F5B128FBFA9B00B7C51D /* ProfileViewController.xib in Resources */,
 				EDF0F58E28FBDE3700B7C51D /* Silkscreen-Bold.ttf in Resources */,
