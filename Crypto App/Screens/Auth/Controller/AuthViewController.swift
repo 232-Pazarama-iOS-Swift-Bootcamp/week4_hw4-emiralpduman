@@ -34,7 +34,7 @@ final class AuthViewController: FAViewController {
         }
     }
     
-    @IBOutlet weak var titleLabel: CALabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var credentionTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmButton: UIButton!
@@ -90,16 +90,35 @@ final class AuthViewController: FAViewController {
                              password: password,
                              completion: { [weak self] in
                 guard let self = self else { return }
-                let cryptoListViewModel = RecentPhotosViewModel()
-                let PhotoListViewController = RecentPhotosViewController(viewModel: cryptoListViewModel)
                 
+                
+                
+                
+                
+                
+                
+                
+                let recentPhotosViewModel = RecentPhotosViewModel()
+                let photoListViewController = RecentPhotosViewController(viewModel: recentPhotosViewModel)
+
+                photoListViewController.tabBarItem = UITabBarItem(title: "Recent",
+                                                                  image: Asset.home.image,
+                                                                  tag: .zero)
+                                
                 let searchViewModel = SearchViewModel()
                 let searchViewController = SearchViewController(viewModel: searchViewModel)
+                searchViewController.tabBarItem = UITabBarItem(title: "Search",
+                                                               image: Asset.search.image,
+                                                              tag: .zero)
                 
                 let profileViewController = ProfileViewController(viewModel: ProfileViewModel())
+                profileViewController.tabBarItem = UITabBarItem(title: "Profile",
+                                                                image: Asset.profile.image,
+                                                              tag: .zero)
                 
                 let tabBarController = UITabBarController()
-                tabBarController.viewControllers = [PhotoListViewController,
+                tabBarController.navigationItem.hidesBackButton = true
+                tabBarController.viewControllers = [photoListViewController,
                                                     searchViewController,
                                                     profileViewController]
                 self.navigationController?.pushViewController(tabBarController, animated: true)

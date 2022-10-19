@@ -77,10 +77,7 @@ class ProfileViewController: FAViewController, UserDefaultsAccessible, FireBaseF
             }
         }
         
-        let tabBarIcon = Asset.home.image
-        tabBarItem = UITabBarItem(title: "Search",
-                                  image: tabBarIcon,
-                                  tag: .zero)
+
         
         
         profileCollectionView.delegate = self

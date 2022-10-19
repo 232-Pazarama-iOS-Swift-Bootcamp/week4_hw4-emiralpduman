@@ -26,10 +26,7 @@ class SearchViewController: FAViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
-        let tabBarIcon = Asset.home.image
-        tabBarItem = UITabBarItem(title: "Search",
-                                  image: tabBarIcon,
-                                  tag: .zero)
+        
         
         photosCollectionView.delegate = self
         photosCollectionView.dataSource = self

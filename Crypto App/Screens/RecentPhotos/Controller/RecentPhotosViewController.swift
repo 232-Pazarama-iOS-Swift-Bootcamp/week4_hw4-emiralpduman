@@ -71,12 +71,7 @@ final class RecentPhotosViewController: FAViewController, UserDefaultsAccessible
         
         
         title = "Recent"
-        let tabBarIcon = Asset.home.image
-        tabBarItem = UITabBarItem(title: "Recent",
-                                  image: tabBarIcon,
-                                  tag: .zero)
-        
-        tabBarController?.navigationItem.hidesBackButton = true
+       
         
         tableView.delegate = self
         tableView.dataSource = self

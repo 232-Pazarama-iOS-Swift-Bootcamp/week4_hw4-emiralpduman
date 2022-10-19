@@ -25,6 +25,9 @@ internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal static let favorite = SymbolAsset(name: "favorite")
   internal static let home = SymbolAsset(name: "home")
+    internal static let search = SymbolAsset(name: "search")
+    internal static let profile = SymbolAsset(name: "profile")
+
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

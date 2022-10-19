@@ -31,9 +31,6 @@
 		EDC88D9B28FA93C800D8645D /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC88D9A28FA93C800D8645D /* AlertPresentable.swift */; };
 		EDC88D9E28FA978100D8645D /* FAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC88D9D28FA978100D8645D /* FAViewController.swift */; };
 		EDC88DA028FAA40800D8645D /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC88D9F28FAA40800D8645D /* FlickrAPI.swift */; };
-		EDF0F58D28FBDDBB00B7C51D /* CALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0F58C28FBDDBB00B7C51D /* CALabel.swift */; };
-		EDF0F58E28FBDE3700B7C51D /* Silkscreen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF0F58A28FBDD1800B7C51D /* Silkscreen-Bold.ttf */; };
-		EDF0F58F28FBDE3700B7C51D /* Silkscreen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDF0F58B28FBDD1800B7C51D /* Silkscreen-Regular.ttf */; };
 		EDF0F5A928FBEFA100B7C51D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0F5A828FBEFA100B7C51D /* Assets.swift */; };
 		EDF0F5AB28FBF5BF00B7C51D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0F5AA28FBF5BF00B7C51D /* Fonts.swift */; };
 		EDF0F5B628FC067D00B7C51D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0F5B528FC067D00B7C51D /* User.swift */; };
@@ -77,9 +74,6 @@
 		EDC88D9A28FA93C800D8645D /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		EDC88D9D28FA978100D8645D /* FAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAViewController.swift; sourceTree = "<group>"; };
 		EDC88D9F28FAA40800D8645D /* FlickrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
-		EDF0F58A28FBDD1800B7C51D /* Silkscreen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Bold.ttf"; sourceTree = "<group>"; };
-		EDF0F58B28FBDD1800B7C51D /* Silkscreen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silkscreen-Regular.ttf"; sourceTree = "<group>"; };
-		EDF0F58C28FBDDBB00B7C51D /* CALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALabel.swift; sourceTree = "<group>"; };
 		EDF0F5A828FBEFA100B7C51D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		EDF0F5AA28FBF5BF00B7C51D /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EDF0F5B528FC067D00B7C51D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -183,19 +177,19 @@
 				F34B0615290069A100BD5660 /* ProfileNew */,
 				F3BFC13C28FEBBBB004E68A1 /* Search */,
 				ED89E31828F2D6DD00C96D75 /* Auth */,
-				ED4CE42D28F16082002A38FE /* CryptoList */,
+				ED4CE42D28F16082002A38FE /* RecentPhotos */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		ED4CE42D28F16082002A38FE /* CryptoList */ = {
+		ED4CE42D28F16082002A38FE /* RecentPhotos */ = {
 			isa = PBXGroup;
 			children = (
 				ED9E9E6828F179D300B048B0 /* ViewModel */,
 				ED4CE43328F160D5002A38FE /* Controller */,
 				ED4CE43228F160D2002A38FE /* View */,
 			);
-			path = CryptoList;
+			path = RecentPhotos;
 			sourceTree = "<group>";
 		};
 		ED4CE43228F160D2002A38FE /* View */ = {
@@ -281,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				EDF0F59828FBE9BF00B7C51D /* Generated */,
-				EDF0F58928FBDD0800B7C51D /* Fonts */,
 				ED4CE42028F15267002A38FE /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -334,19 +327,9 @@
 			isa = PBXGroup;
 			children = (
 				EDC88D9D28FA978100D8645D /* FAViewController.swift */,
-				EDF0F58C28FBDDBB00B7C51D /* CALabel.swift */,
 				EDF0F5BF28FC180000B7C51D /* FAViewModel.swift */,
 			);
 			path = CAKit;
-			sourceTree = "<group>";
-		};
-		EDF0F58928FBDD0800B7C51D /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				EDF0F58A28FBDD1800B7C51D /* Silkscreen-Bold.ttf */,
-				EDF0F58B28FBDD1800B7C51D /* Silkscreen-Regular.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		EDF0F59828FBE9BF00B7C51D /* Generated */ = {
@@ -546,8 +529,6 @@
 				F34B062D29006CD900BD5660 /* ProfileCollectionViewCell.xib in Resources */,
 				F34B062129006B1B00BD5660 /* ProfileViewController.xib in Resources */,
 				ED4CE42128F15267002A38FE /* Assets.xcassets in Resources */,
-				EDF0F58F28FBDE3700B7C51D /* Silkscreen-Regular.ttf in Resources */,
-				EDF0F58E28FBDE3700B7C51D /* Silkscreen-Bold.ttf in Resources */,
 				ED9E9E7428F183D800B048B0 /* PhotoTableViewCell.xib in Resources */,
 				ED89E31C28F2D6F900C96D75 /* AuthViewController.xib in Resources */,
 				F3BFC15928FEE7BA004E68A1 /* SearchCollectionViewCell.xib in Resources */,
@@ -655,7 +636,6 @@
 				EDF0F5AB28FBF5BF00B7C51D /* Fonts.swift in Sources */,
 				ED89E31B28F2D6F900C96D75 /* AuthViewController.swift in Sources */,
 				EDC88D9E28FA978100D8645D /* FAViewController.swift in Sources */,
-				EDF0F58D28FBDDBB00B7C51D /* CALabel.swift in Sources */,
 				F34B062829006CA300BD5660 /* ProfileViewModel.swift in Sources */,
 				EDF0F5B928FC082500B7C51D /* Encodable+Extensions.swift in Sources */,
 				F3BFC14328FEBC33004E68A1 /* SearchViewModel.swift in Sources */,
