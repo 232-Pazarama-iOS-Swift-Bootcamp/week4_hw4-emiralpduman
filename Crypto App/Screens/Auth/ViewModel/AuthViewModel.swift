@@ -30,10 +30,8 @@ final class AuthViewModel {
                 return
             }
             
-            let user = User(username: authResult?.user.displayName,
-                            email: authResult?.user.email,
-                            pp: "",
-                            favorites: [])
+            let user = User(email: authResult?.user.email, name: authResult?.user.displayName)
+            
             do {
                 guard let data = try user.dictionary,
                       let id = authResult?.user.uid else {
