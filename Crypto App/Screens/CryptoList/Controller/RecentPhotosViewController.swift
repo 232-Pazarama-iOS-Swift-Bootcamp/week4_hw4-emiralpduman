@@ -89,6 +89,7 @@ extension RecentPhotosViewController: UITableViewDataSource {
         guard let photo = viewModel.photoForIndexPath(indexPath) else {
             fatalError("photo not found.")
         }
+        cell.photo = photo
         cell.iconImageView.kf.setImage(with: photo.url) { _ in }
         return cell
     }

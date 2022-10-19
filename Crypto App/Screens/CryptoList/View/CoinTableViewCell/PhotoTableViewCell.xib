@@ -30,11 +30,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50.666666666666664" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                        <connections>
+                                            <action selector="didAddToFavouriteButtonTapped:" destination="Xme-hO-NFA" eventType="touchUpInside" id="0Ou-f7-EUi"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6b9-OQ-NpJ">
                                         <rect key="frame" x="218.66666666666669" y="0.0" width="53.666666666666686" height="34.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="folder.badge.plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="didAddToLibraryButtonTapped:" destination="Xme-hO-NFA" eventType="touchUpInside" id="gqC-Pe-sLX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="DKH-FX-vX8"/>
