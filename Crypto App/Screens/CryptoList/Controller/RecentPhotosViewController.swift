@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class RecentPhotosViewController: FAViewController  {
+final class RecentPhotosViewController: FAViewController, UserDefaultsAccessible, FireBaseFireStoreAccessible  {
     private var viewModel: RecentPhotosViewModel
     
     var userName: String = "UserName" {
@@ -35,6 +35,40 @@ final class RecentPhotosViewController: FAViewController  {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        let userDbId = defaults.object(forKey: "uid")
+        
+        let docRef = db.collection("users").document(userDbId as! String)
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data()
+                self.userName = dataDescription!["emailAddress"] as! String
+ 
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+        
+        
+//        db.collection("users").whereField("userUid", isEqualTo: userDbId)
+//            .getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        let documentData: [String:Any] = document.data()
+//                        let photoURL = documentData["photoURL"] as! String
+//                        self.photoURLs.append(photoURL)
+//
+//
+//
+//                    }
+//                }
+//        }
+        
+        
         
         title = "Recent"
         let tabBarIcon = Asset.home.image

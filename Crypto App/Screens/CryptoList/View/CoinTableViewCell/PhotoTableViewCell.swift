@@ -85,6 +85,21 @@ final class PhotoTableViewCell: UITableViewCell, FireBaseFireStoreAccessible, Us
     
     
     @IBAction func didAddToLibraryButtonTapped(_ sender: UIButton) {
+        if isAlreadyInLibrary {
+            return
+        } else {
+            let userDbId = defaults.object(forKey: "uid")
+            let data: [String: Any] = ["userUid": userDbId,
+                                       "photoURL": photo?.url?.absoluteString]
+            db.collection("library").document(UUID().uuidString).setData(data) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("Favorite relationship was succesfully added.")
+                }
+            }
+            
+        }
     }
     
     @IBOutlet weak var addToFavouriteButton: UIButton!

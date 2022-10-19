@@ -96,7 +96,7 @@ final class AuthViewController: FAViewController {
                 let searchViewModel = SearchViewModel()
                 let searchViewController = SearchViewController(viewModel: searchViewModel)
                 
-                let profileViewController = ProfileViewController()
+                let profileViewController = ProfileViewController(viewModel: ProfileViewModel())
                 
                 let tabBarController = UITabBarController()
                 tabBarController.viewControllers = [PhotoListViewController,
