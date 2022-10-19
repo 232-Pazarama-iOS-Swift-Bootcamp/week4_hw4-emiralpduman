@@ -29,8 +29,9 @@ final class AuthViewModel {
                 self.changeHandler?(.didErrorOccurred(error))
                 return
             }
+
             
-            let user = User(email: authResult?.user.email, name: authResult?.user.displayName)
+            let user = User(email: (authResult?.user.email)!)
             
             do {
                 guard let data = try user.dictionary,
