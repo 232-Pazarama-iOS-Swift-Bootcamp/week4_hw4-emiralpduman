@@ -1,18 +1,25 @@
-# 📈🪙 Crypt App 🪙📈
+# Flickr App
 
-![Swift 4.x](https://img.shields.io/badge/Swift-4.x-orange) ![Swift 5.x](https://img.shields.io/badge/Swift-5.x-orange)
+Upon account cration, this app shows user recent photos from Flickr API. User also search photos by keyword. Photos can be added to personal collection and to favourites in user's account. On account page, user can see photos which were to collection and favourites.
 
-An application about crypto coins.
+###### Assignment given in Patika.dev iOS Swift Bootcamp
 
-## Installation
+## Features
 
-* Clone the project.
-* Run `pod install` on terminal.
-* Open project with \*.xcworkspace file.
-* Set up is done!
+- Personal account
+- See recent photos from Flickr API
+- Add to personal collection or favourites, see them in your account.
+- Cloud storage
+- Search photos by keyword
 
-## Preview
+## Languages and Frameworks
 
-![Screen Shot 1](images/ss-1.png)
-![Screen Shot 2](images/ss-2.png)
-![Screen Shot 3](images/ss-3.png)
+- Swift
+- MVVM
+- UIKit
+- Storyboard
+
+## Dependencies
+
+- Firebase
+- Moya
