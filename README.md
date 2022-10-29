@@ -6,9 +6,6 @@ Upon account cration, this app shows user recent photos from Flickr API. User ca
 
 ## Features
 
-[![Auth](/images/auth.gif "Auth")]
-
-
 - Personal account
 - See recent photos from Flickr API
 - Add to personal collection or favourites, see them in your account
