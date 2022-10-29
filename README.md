@@ -23,3 +23,5 @@ Upon account cration, this app shows user recent photos from Flickr API. User ca
 
 - Firebase
 - Moya
+- Snapkit
+- Kingfisher
